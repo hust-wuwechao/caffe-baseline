@@ -634,8 +634,8 @@ Dtype Net<Dtype>::ForwardFromTo(int start, int end) {
     Dtype layer_loss = layers_[i]->Forward(bottom_vecs_[i], top_vecs_[i]);
 
 
-    LOG_IF(INFO, Caffe::root_solver())
-        << "typeid(x).name() "<<typeid(*layers_[i]).name(); 
+     /* LOG_IF(INFO, Caffe::root_solver())
+        << "typeid(x).name() "<<typeid(*layers_[i]).name();  */ 
     //printf("typeid(x).name() is %s\n",typeid(x).name());
 
 
