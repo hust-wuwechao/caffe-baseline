@@ -176,7 +176,7 @@ void Net<Dtype>::Init(const NetParameter& in_param)
 
 
     
-      if(layers_[layer_id]->type()=="Convolution"
+     /*  if(layers_[layer_id]->type()=="Convolution"
          // layers_[layer_id]->type()=="ReLU"||
          // layers_[layer_id]->type()=="Pooling"
          )
@@ -184,7 +184,7 @@ void Net<Dtype>::Init(const NetParameter& in_param)
          LOG_IF(INFO, Caffe::root_solver()) << " CuDNNConvolutionLayer ";
          layers_[layer_id]->SetUp(bottom_vecs_[layer_id], top_vecs_[layer_id],handle_,stream_);
     }  
-    else 
+    else  */
     {
       
        LOG_IF(INFO, Caffe::root_solver())
