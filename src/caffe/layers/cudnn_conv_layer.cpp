@@ -424,18 +424,18 @@ CuDNNConvolutionLayer<Dtype>::~CuDNNConvolutionLayer()
   cudnnDestroyFilterDescriptor(filter_desc_);
 
 
- /*  
+  
     for (int g = 0; g < this->group_ * CUDNN_STREAMS_PER_GROUP; g++) 
     {
        cudaStreamDestroy(stream_[g]);
        cudnnDestroy(handle_[g]);
     } 
- */
+ 
 
   cudaFree(workspaceData);
   delete [] workspace;
-  //delete [] stream_;
-  //delete [] handle_;
+  delete [] stream_;
+  delete [] handle_;
   delete [] fwd_algo_;
   delete [] bwd_filter_algo_;
   delete [] bwd_data_algo_;
