@@ -47,7 +47,8 @@ void CuDNNPoolingLayer<Dtype>::LayerSetUp1(const vector<Blob<Dtype>*>& bottom,
 
 template <typename Dtype>
 void CuDNNPoolingLayer<Dtype>::Reshape(const vector<Blob<Dtype>*>& bottom,
-    const vector<Blob<Dtype>*>& top) {
+    const vector<Blob<Dtype>*>& top) 
+{
   PoolingLayer<Dtype>::Reshape(bottom, top);
    // 这里面仍然是调用父类的方法。 
    cudnn::setTensor4dDesc<Dtype>(&bottom_desc_, bottom[0]->num(),
@@ -57,9 +58,11 @@ void CuDNNPoolingLayer<Dtype>::Reshape(const vector<Blob<Dtype>*>& bottom,
 }
 
 template <typename Dtype>
-CuDNNPoolingLayer<Dtype>::~CuDNNPoolingLayer() {
+CuDNNPoolingLayer<Dtype>::~CuDNNPoolingLayer() 
+{
   // Check that handles have been setup before destroying.
-  if (!handles_setup_) { return; }
+  if (!handles_setup_) 
+  { return; }
 
   cudnnDestroyTensorDescriptor(bottom_desc_);
   cudnnDestroyTensorDescriptor(top_desc_);

@@ -339,7 +339,9 @@ int time() {
     LOG(INFO) << "Use GPU with device ID " << gpus[0];
     Caffe::SetDevice(gpus[0]);
     Caffe::set_mode(Caffe::GPU);
-  } else {
+  } 
+  else
+   {
     LOG(INFO) << "Use CPU.";
     Caffe::set_mode(Caffe::CPU);
   }
